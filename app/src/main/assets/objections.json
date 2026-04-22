@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Mahal",
+    "response": "Nauunawaan ko ang concern mo sa presyo. Kaya yan ang ganda dito - nakakakuha ka ng premium quality sa reasonable cost. Plus, ang investment na ito ay kikita ka ng malaki sa long run. Isip mo lang, kung magastos ngayon pero kikita ka, mas sulit ba 'yan o kung matipid ka ngayon pero walang future?",
+    "followUp": "Kung sakto lang ang presyo at proven na kumikita ang sistema, handa ka na bang magsimula?",
+    "psychology": "Ang price objection ay hindi tungkol sa presyo - ito ay tungkol sa value perception. Kailangan mong ipakita na ang benefits ay mas malaki kaysa sa cost. Ang mga tao ay willing magbayad kung nakikita nila ang return on investment.",
+    "confidenceTip": "Huwag mag-defensive tungkol sa presyo. Instead, ipakita ang numbers at testimonials ng successful users. Ang confidence mo sa product ay ang best sales tool."
+  },
+  {
+    "id": 2,
+    "title": "Pag-iisipan ko",
+    "response": "Sure, yan ang important - dapat mag-isip ka nang mabuti. Pero habang nag-iisip ka, kumikita ang iba na gumagamit na ng system. Kaya sa halip na mag-isip ng isang buwan, bakit hindi tayo mag-set up ng trial run para makita mo mismo kung paano ito gumagana for you?",
+    "followUp": "Gusto mo bang subukan muna nang walang commitment para makita mo mismo ang results?",
+    "psychology": "Ang 'let me think about it' ay madalas na polite rejection. Dapat mo itong i-convert into action. Ang key ay gawing easy para subukan without big commitment. Psychological principle: people prefer taking action over waiting.",
+    "confidenceTip": "Create urgency subtly. Mention na may limited slots o special promo available now. But be honest - manipulation backfires. Focus on making it easy for them to say yes."
+  },
+  {
+    "id": 3,
+    "title": "May insurance na ako",
+    "response": "Okay, good na may insurance ka na. Pero check mo - tinatanggap ba ng insurance mo ang lahat ng medical scenarios na kailangan mo? Majority ng insurance ay may limitations at exclusions. Ang system na ito ay complementary - saka-suporta lang ng insurance mo para complete ang protection mo.",
+    "followUp": "Puwede ba kitain kung ano ang covered at hindi ng insurance mo para i-fill in natin ang gaps?",
+    "psychology": "This is a feature/benefit objection disguised as a competitor concern. They think they don't need you because they have something similar. Reality: they likely have incomplete coverage. Position yourself as the solution that fills the gaps.",
+    "confidenceTip": "Know your competitor's weakness and your unique strengths. You're not replacing insurance - you're completing the picture. Own that positioning confidently."
+  },
+  {
+    "id": 4,
+    "title": "Wala budget",
+    "response": "Yan ang first thought ng karamihan! Pero tignan natin - kung ang system na ito ay makakapag-generate ng income na mas malaki pa sa investment, walang budget problema 'yan e. Ang aming flexible payment plan ay designed specifically para dito. Meron kaming option na walang laking upfront - start ka lang small tapos grow.",
+    "followUp": "Okay na ba kung broken down natin into smaller payments na affordable para sa monthly budget mo?",
+    "psychology": "Budget objection often means 'I don't see enough value yet' rather than actual lack of funds. People find money for things they prioritize. Show ROI clearly. Offer flexible payment to remove friction.",
+    "confidenceTip": "Have multiple payment options ready. Monthly installments, starter packages, trial periods - these remove barriers. Also, reframe: 'Can you afford NOT to do this?' If it generates income, the ROI answers the budget question."
+  },
+  {
+    "id": 5,
+    "title": "Not interested",
+    "response": "Totally fine. Pero bago mo i-dismiss completely, bigyan mo lang ako ng 2 minutes. Nakita ko na na kaming nag-transform ng lives ng thousands who initially said the same thing. Ang common denominator? Once nakita nila mismo kung paano talaga ang system at ang realistic results, nagbago ang isip nila. What specifically ang hindi nag-interest sa iyo?",
+    "followUp": "Ano ang ideal setup para interesting sa iyo? Let's see kung kaya naming i-customize.",
+    "psychology": "Direct disinterest requires you to uncover the real objection. There's always a reason - bad timing, wrong fit, previous bad experience, or lack of understanding. Your job is to find it. Genuine curiosity disarms resistance.",
+    "confidenceTip": "Don't take 'not interested' at face value. It's often a mask. Ask deeper questions. Show genuine interest in their situation rather than pushing your pitch. People engage when they feel understood, not sold to."
+  }
+]

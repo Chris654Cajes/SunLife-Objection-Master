@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunLife Objection Master - User Manual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2196F3;
+            --primary-dark: #1976D2;
+            --accent-color: #FFC107;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --background: #F5F5F5;
+            --card-bg: #FFFFFF;
+            --border-radius: 12px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .app-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .screenshot-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-caption {
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .mockup-phone {
+            background: #333;
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: 1rem auto;
+            max-width: 300px;
+        }
+
+        .mockup-screen {
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .mockup-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            margin: -15px -15px 15px -15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .mockup-search {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mockup-card {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .mockup-card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .mockup-card-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-color), #FFB300);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .screenshot-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+            <h1 class="app-title">SunLife Objection Master</h1>
+            <p class="subtitle">Your Complete Guide to Handling Customer Objections</p>
+        </header>
+
+        <div class="content">
+            <!-- Overview Section -->
+            <section class="section fade-in">
+                <h2>📱 Overview</h2>
+                <p>SunLife Objection Master is a comprehensive Android application designed to empower sales professionals with the tools and knowledge needed to effectively handle customer objections. This app provides instant access to proven response scripts, psychological insights, and confidence-building tips.</p>
+                
+                <div class="highlight-box">
+                    Transform objections into opportunities with expert guidance at your fingertips!
+                </div>
+            </section>
+
+            <!-- Key Features Section -->
+            <section class="section fade-in">
+                <h2>✨ Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🔍 Smart Search</h4>
+                        <p>Quickly find relevant objections using our powerful search functionality with real-time filtering.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎯 Comprehensive Database</h4>
+                        <p>Access a wide range of common customer objections with detailed, proven responses.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔊 Audio Support</h4>
+                        <p>Listen to objection responses using built-in text-to-speech technology for hands-free learning.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🧠 Psychological Insights</h4>
+                        <p>Understand the psychology behind objections with expert analysis and tips.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>💡 Confidence Tips</h4>
+                        <p>Build your confidence with practical tips and techniques for handling difficult situations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📱 Modern UI</h4>
+                        <p>Enjoy a clean, intuitive interface with Material Design principles and smooth animations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- App Screenshots Section -->
+            <section class="section fade-in">
+                <h2>📸 App Interface</h2>
+                <div class="screenshot-container">
+                    <div class="mockup-phone">
+                        <div class="mockup-screen">
+                            <div class="mockup-header">SunLife Objection Master</div>
+                            <div class="mockup-search">🔍 Search objections...</div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">"It's too expensive"</div>
+                                <div class="mockup-card-subtitle">Price objection with value-based response...</div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">"I need to think about it"</div>
+                                <div class="mockup-card-subtitle">Delay tactic with urgency creation...</div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">"Your competitor is cheaper"</div>
+                                <div class="mockup-card-subtitle">Competition objection with differentiation...</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mockup-phone">
+                        <div class="mockup-screen">
+                            <div class="mockup-header">← Objection Details</div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">📝 Response Script</div>
+                                <div class="mockup-card-subtitle">I understand your concern about price. Let me show you the value...</div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">❓ Follow-up Question</div>
+                                <div class="mockup-card-subtitle">What specific aspects are you comparing?</div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">🧠 Psychology</div>
+                                <div class="mockup-card-subtitle">Customer seeks validation and justification...</div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">💡 Confidence Tip</div>
+                                <div class="mockup-card-subtitle">Maintain eye contact and confident posture...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Getting Started Section -->
+            <section class="section fade-in">
+                <h2>🚀 Getting Started</h2>
+                <h3>Installation</h3>
+                <ol class="step-list">
+                    <li>Download the SunLife Objection Master APK file</li>
+                    <li>Enable "Install from unknown sources" in your device settings</li>
+                    <li>Tap on the APK file to begin installation</li>
+                    <li>Follow the on-screen prompts to complete installation</li>
+                    <li>Launch the app from your app drawer</li>
+                </ol>
+
+                <h3>First Launch</h3>
+                <p>When you first launch the app, you'll see the main screen with:</p>
+                <ul>
+                    <li>The app title at the top</li>
+                    <li>A search bar for finding specific objections</li>
+                    <li>A scrollable list of available objections</li>
+                    <li>Each objection card shows the title and preview text</li>
+                </ul>
+            </section>
+
+            <!-- How to Use Section -->
+            <section class="section fade-in">
+                <h2>📖 How to Use</h2>
+                
+                <h3>Searching for Objections</h3>
+                <ol class="step-list">
+                    <li>Tap on the search bar at the top of the main screen</li>
+                    <li>Type keywords related to the objection you're facing</li>
+                    <li>The list will automatically filter as you type</li>
+                    <li>Tap on any objection to view detailed information</li>
+                </ol>
+
+                <h3>Viewing Objection Details</h3>
+                <p>Each objection detail screen includes four key sections:</p>
+                <ul>
+                    <li><strong>Response Script:</strong> The exact words you can use to respond</li>
+                    <li><strong>Follow-up Questions:</strong> Questions to keep the conversation moving</li>
+                    <li><strong>Psychology:</strong> Understanding the customer's mindset</li>
+                    <li><strong>Confidence Tip:</strong> How to deliver the response effectively</li>
+                </ul>
+
+                <h3>Using Audio Features</h3>
+                <ol class="step-list">
+                    <li>On the main screen, tap the play button on any objection card</li>
+                    <li>In the detail screen, tap the play button next to the response script</li>
+                    <li>The app will read the response aloud using text-to-speech</li>
+                    <li>Use this to practice delivery or for hands-free learning</li>
+                </ol>
+            </section>
+
+            <!-- Tips and Best Practices Section -->
+            <section class="section fade-in">
+                <h2>💡 Tips and Best Practices</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🎯 Practice Regularly</h4>
+                        <p>Review objections daily to internalize responses and build muscle memory.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>👂 Listen First</h4>
+                        <p>Always listen carefully to the complete objection before responding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🤝 Build Rapport</h4>
+                        <p>Use the psychology insights to understand and connect with customers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📚 Customize Responses</h4>
+                        <p>Adapt the scripts to your personal style and specific situations.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    Remember: The best objection handling feels natural and authentic, not rehearsed!
+                </div>
+            </section>
+
+            <!-- Technical Information Section -->
+            <section class="section fade-in">
+                <h2>⚙️ Technical Information</h2>
+                <h3>System Requirements</h3>
+                <ul>
+                    <li>Android 5.0 (Lollipop) or higher</li>
+                    <li>Minimum 2GB RAM recommended</li>
+                    <li>50MB available storage space</li>
+                    <li>Internet connection for initial content download</li>
+                </ul>
+
+                <h3>Technology Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Android Jetpack</span>
+                    <span class="tech-badge">Kotlin</span>
+                    <span class="tech-badge">Material Design</span>
+                    <span class="tech-badge">MVVM Architecture</span>
+                    <span class="tech-badge">Text-to-Speech</span>
+                    <span class="tech-badge">RecyclerView</span>
+                </div>
+
+                <h3>Architecture</h3>
+                <p>The app follows modern Android development practices with:</p>
+                <ul>
+                    <li><strong>MVVM Pattern:</strong> Clean separation of concerns</li>
+                    <li><strong>ViewModel:</strong> Manages UI-related data and survives configuration changes</li>
+                    <li><strong>LiveData:</strong> Reactive data handling</li>
+                    <li><strong>Material Components:</strong> Consistent, modern UI elements</li>
+                </ul>
+            </section>
+
+            <!-- Troubleshooting Section -->
+            <section class="section fade-in">
+                <h2>🔧 Troubleshooting</h2>
+                
+                <h3>Common Issues</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Audio Not Playing</h4>
+                        <p>Check your device's text-to-speech settings and ensure volume is turned up.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Search Not Working</h4>
+                        <p>Try restarting the app and ensure you have a stable internet connection.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>App Crashes</h4>
+                        <p>Clear the app cache and restart your device if issues persist.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Slow Performance</h4>
+                        <p>Close other apps and ensure you have sufficient available storage.</p>
+                    </div>
+                </div>
+
+                <h3>Contact Support</h3>
+                <p>If you continue to experience issues, please contact our support team with:</p>
+                <ul>
+                    <li>Your device model and Android version</li>
+                    <li>A detailed description of the issue</li>
+                    <li>Screenshots if applicable</li>
+                    <li>Steps to reproduce the problem</li>
+                </ul>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="section fade-in">
+                <h2>❓ Frequently Asked Questions</h2>
+                
+                <h3>Q: Can I use this app offline?</h3>
+                <p>A: Yes, once the initial content is downloaded, the app works fully offline.</p>
+
+                <h3>Q: How often is the content updated?</h3>
+                <p>A: We regularly update the objection database with new scenarios and improved responses.</p>
+
+                <h3>Q: Can I customize the responses?</h3>
+                <p>A: While you can't edit the built-in responses, you can use them as templates and adapt them to your style.</p>
+
+                <h3>Q: Is the app available for iOS?</h3>
+                <p>A: Currently, SunLife Objection Master is available exclusively for Android devices.</p>
+
+                <h3>Q: How do I suggest new objections or improvements?</h3>
+                <p>A: We welcome feedback! Please use the in-app feedback feature or contact our support team.</p>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 SunLife Objection Master. All rights reserved.</p>
+            <p>Version 1.0.0 | Last Updated: April 2025</p>
+            <p>Empowering sales professionals worldwide</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scrolling and fade-in animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add interactive hover effects
+            const cards = document.querySelectorAll('.feature-card, .mockup-phone');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

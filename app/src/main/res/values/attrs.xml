@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes -->
+    <attr name="colorPrimaryVariant" format="color" />
+    <attr name="colorSecondaryVariant" format="color" />
+    <attr name="selectableItemBackground" format="reference" />
+    
+    <!-- Shape attributes for Material Design -->
+    <declare-styleable name="ShapeAppearance">
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="cornerFamily" format="enum">
+            <enum name="rounded" value="0" />
+            <enum name="cut" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

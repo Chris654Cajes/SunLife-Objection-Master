@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Objection Master</string>
+    <string name="search_hint">Search objections...</string>
+    <string name="no_results">No objections found</string>
+    <string name="response_script">Response Script</string>
+    <string name="follow_up">Follow-up Question</string>
+    <string name="psychology">Psychology Explanation</string>
+    <string name="confidence_tip">Confidence Tip</string>
+    <string name="play_audio">Play Audio</string>
+    <string name="back">Back</string>
+    <string name="all_objections">All Objections</string>
+    <string name="objection">Objection</string>
+</resources>

@@ -38,6 +38,15 @@ android {
         viewBinding = true
         dataBinding = true
     }
+
+    applicationVariants.all {
+        val variant = this
+        outputs.forEach { output ->
+            val outputImpl = output as com.android.build.gradle.internal.api.BaseVariantOutputImpl
+            outputImpl.outputFileName = "SunLifeObjectionMaster.apk"
+        }
+    }
+
 }
 
 dependencies {
